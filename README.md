@@ -1,0 +1,52 @@
+**DISCLAIMER : DO NOT modify this repository or create branches. Clone it into your own repository then follow the instructions. Set the repository to private.**
+
+This project aims to simulate a variant of the Prisoner's dilemma called Friend or Foe.
+
+The rules are simple : two "prisoners" play against each other, for a given number of rounds. In each round, the
+prisoners choose either to **BETRAY** or **COOPERATE** with each other.
+
+- if **both** prisoners **COOPERATE** : both prisoners get 10 points
+- if one prisoner **BETRAYS** while the other **COOPERATES** : the betrayer gets 20 points
+- if **both** prisoners **BETRAY** : no one gets points
+
+At the end of the rounds, score is counted and whoever has the most points wins. There can be a draw.
+
+An example in 3 rounds :
+
+    Bob and Bill play together
+
+    At the first round Bob and Bill both cooperate : they both score 10 points
+    At the second round Bob betrays while Bill cooperates, Bob scores 20 points
+    At the third round they both betray each other, therefore getting no points
+
+    The winner is Bob, with 30 points, ahead of Bill and his 10 points.
+
+For a high-end sociological study, we want to try out how different archetypes of prisoners would fare against each
+other in a Friend or Foe tournament.
+
+Here are the prisoner archetypes :
+- Gullible : this one always cooperates.
+- Treacherous : this one always betrays.
+- False-friend : this one always cooperates, but betrays in the last round.
+- Vengeful : this one cooperates, until you betray him, then he will always betray.
+- Cautious : this one betrays until you cooperate, then he will cooperate.
+- Mimic : this one starts by betraying, then copies the last move of its opponent.
+
+Our goal as testers is to ensure that the classes located in package com.kering.prisoners.game and
+com.kering.prisoners.archetypes are working as expected. There are errors in the code AND in the tests.
+
+1) Run the tests in game.feature. If it fails, explain why, and fix it.
+
+2) Run the tests in gulliblePrisoner.feature. If it fails, explain why, and fix it.
+
+3) Write the tests for the cautious archetype in the cautiousPrisoner.feature file. Make sure the tests pass.
+
+4) Complete the test for the false-friend archetype. Make sure it passes.
+
+5) Run the tests in mimicArchetype.feature. It will throw an UnsupportedOperationException. Implement the missing
+methods in the MimicPrisoner class and ensure the tests pass.
+
+6) Purely for testing purposes, we need to create a new kind of archetype, called Predictable. This archetype will
+follow a predictable, cyclic pattern of Decisions that is defined at the creation of the prisoner.
+For example, I could use this archetype to create a prisoner that betrays once every 3 rounds, until the game ends.
+Write the archetype and make sure it works.
